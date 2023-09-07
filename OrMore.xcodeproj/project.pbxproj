@@ -21,6 +21,8 @@
 		A555D1E72AA952E300E2FF89 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = A555D1E62AA952E300E2FF89 /* Neumorphic */; };
 		A555D1EA2AA9568800E2FF89 /* PrayerRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A555D1E92AA9568800E2FF89 /* PrayerRequestView.swift */; };
 		A555D1F02AA95C2B00E2FF89 /* PrayerRequestEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A555D1EF2AA95C2B00E2FF89 /* PrayerRequestEditor.swift */; };
+		A5BAE1702AA9FF0400219399 /* PrayerRequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BAE16F2AA9FF0400219399 /* PrayerRequestsView.swift */; };
+		A5BAE1732AA9FFCE00219399 /* SwiftTheming in Frameworks */ = {isa = PBXBuildFile; productRef = A5BAE1722AA9FFCE00219399 /* SwiftTheming */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		A555D1E32AA9509D00E2FF89 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A555D1E92AA9568800E2FF89 /* PrayerRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRequestView.swift; sourceTree = "<group>"; };
 		A555D1EF2AA95C2B00E2FF89 /* PrayerRequestEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRequestEditor.swift; sourceTree = "<group>"; };
+		A5BAE16F2AA9FF0400219399 /* PrayerRequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRequestsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A555D1E72AA952E300E2FF89 /* Neumorphic in Frameworks */,
+				A5BAE1732AA9FFCE00219399 /* SwiftTheming in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +167,7 @@
 			children = (
 				A555D1E92AA9568800E2FF89 /* PrayerRequestView.swift */,
 				A555D1EF2AA95C2B00E2FF89 /* PrayerRequestEditor.swift */,
+				A5BAE16F2AA9FF0400219399 /* PrayerRequestsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			name = OrMore;
 			packageProductDependencies = (
 				A555D1E62AA952E300E2FF89 /* Neumorphic */,
+				A5BAE1722AA9FFCE00219399 /* SwiftTheming */,
 			);
 			productName = OrMore;
 			productReference = A555D1AD2AA94E4800E2FF89 /* OrMore.app */;
@@ -260,6 +266,7 @@
 			mainGroup = A555D1A42AA94E4800E2FF89;
 			packageReferences = (
 				A555D1E52AA952E300E2FF89 /* XCRemoteSwiftPackageReference "neumorphic" */,
+				A5BAE1712AA9FFCE00219399 /* XCRemoteSwiftPackageReference "SwiftTheming" */,
 			);
 			productRefGroup = A555D1AE2AA94E4800E2FF89 /* Products */;
 			projectDirPath = "";
@@ -303,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5BAE1702AA9FF0400219399 /* PrayerRequestsView.swift in Sources */,
 				A555D1E22AA9500C00E2FF89 /* Person.swift in Sources */,
 				A555D1B32AA94E4800E2FF89 /* ContentView.swift in Sources */,
 				A555D1EA2AA9568800E2FF89 /* PrayerRequestView.swift in Sources */,
@@ -645,7 +653,15 @@
 			repositoryURL = "https://github.com/costachung/neumorphic.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 2.0.0;
+			};
+		};
+		A5BAE1712AA9FFCE00219399 /* XCRemoteSwiftPackageReference "SwiftTheming" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dscyrescotti/SwiftTheming.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -655,6 +671,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A555D1E52AA952E300E2FF89 /* XCRemoteSwiftPackageReference "neumorphic" */;
 			productName = Neumorphic;
+		};
+		A5BAE1722AA9FFCE00219399 /* SwiftTheming */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5BAE1712AA9FFCE00219399 /* XCRemoteSwiftPackageReference "SwiftTheming" */;
+			productName = SwiftTheming;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

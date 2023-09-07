@@ -25,7 +25,7 @@ struct PrayerRequestView: View {
         .padding()
         .background {
             RoundedRectangle(cornerRadius: 20)
-                .fill(Neumorphic.defaultMainColor).softOuterShadow()
+                .fill(Color.Neumorphic.main).softOuterShadow()
         }
     }
 }
