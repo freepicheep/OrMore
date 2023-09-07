@@ -18,36 +18,39 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            // List of prayer requests
-            List {
-                ForEach(prayerRequests) { prayerRequest in
-                    NavigationLink {
-                        PrayerRequestView(prayerRequest: prayerRequest)
-                    } label: {
-                        Text(prayerRequest.requestName)
+            ZStack {
+                Color.Neumorphic.main
+                    .ignoresSafeArea()
+                
+                // List of prayer requests
+                VStack {
+                    ForEach(prayerRequests) { prayerRequest in
+                        HStack {
+                            NavigationLink {
+                                PrayerRequestView(prayerRequest: prayerRequest)
+                            } label: {
+                                Text(prayerRequest.requestName)
+                                    .padding()
+                            }
+                            .padding()
+                            Spacer()
+                        }
+                        .frame(maxWidth: .infinity)
+                        .background {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.Neumorphic.main).softOuterShadow()
+                                .padding()
+                        }
                     }
+                    Spacer()
                 }
-            }
-            
-//            List {
-//                ForEach(items) { item in
-//                    NavigationLink {
-//                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-//                    } label: {
-//                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-//                    }
-//                }
-//                .onDelete(perform: deleteItems)
-//            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button {
-                        showingAddItemView.toggle()
-                    } label: {
-                        Image(systemName: "plus")
+                .toolbar {
+                    ToolbarItem {
+                        Button {
+                            showingAddItemView.toggle()
+                        } label: {
+                            Image(systemName: "plus")
+                        }
                     }
                 }
             }
@@ -58,6 +61,7 @@ struct ContentView: View {
         .sheet(isPresented: $showingAddItemView) {
             PrayerRequestEditor(prayerRequest: nil)
         }
+        .foregroundStyle(Color.Neumorphic.secondary)
     }
 
 //    private func addItem() {

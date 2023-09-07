@@ -27,24 +27,46 @@ struct PrayerRequestEditor: View {
     
     var body: some View {
         NavigationStack {
-            Form {
-                TextField("Request Name", text: $requestName)
-                TextField("Request Body", text: $requestBody, axis: .vertical)
-            }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text(editorTitle)
-                }
-                ToolbarItem(placement: .confirmationAction) {
+            ZStack {
+                Color.Neumorphic.main
+                    .ignoresSafeArea()
+                VStack {
+                    TextField("Request Name", text: $requestName)
+                        .padding(.horizontal)
+                        .padding(.vertical)
+                        .background {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.Neumorphic.main).softInnerShadow(RoundedRectangle(cornerRadius: 10), spread: 0.30, radius: 2)
+                                .padding(5)
+                        }
+                        .padding(.horizontal)
+                    TextField("Request Body", text: $requestBody, axis: .vertical)
+                        .padding(.horizontal)
+                        .padding(.vertical)
+                        .background {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.Neumorphic.main).softInnerShadow(RoundedRectangle(cornerRadius: 10), spread: 0.30, radius: 2)
+                                .padding(5)
+                        }
+                        .padding(.horizontal)
+                    Spacer()
                     Button {
                         save()
                         dismiss()
                     } label: {
                         Text("Save")
                     }
+                    .softButtonStyle(RoundedRectangle(cornerRadius: 20))
                     .disabled(requestName == "" || requestBody == "")
+                    .padding(.bottom, 60)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text(editorTitle)
+                    }
                 }
             }
+            .foregroundStyle(Color.Neumorphic.secondary)
         }
         .onAppear {
             if let prayerRequest {
@@ -69,4 +91,5 @@ struct PrayerRequestEditor: View {
 
 #Preview {
     PrayerRequestEditor(prayerRequest: PrayerRequest(createdDate: Date(), requestName: "Pray for Bob", requestBody: "Bob needs Jesus"))
+        .modelContainer(for: PrayerRequest.self, inMemory: true)
 }

@@ -12,20 +12,24 @@ struct PrayerRequestView: View {
     @State var prayerRequest: PrayerRequest
     
     var body: some View {
-        VStack {
-            Text(prayerRequest.requestName)
-                .font(.title)
-                .fontWeight(.bold)
-                .padding()
-            Text(prayerRequest.requestBody)
-                .font(.body)
-                .padding(.horizontal)
-                .padding(.bottom)
-        }
-        .padding()
-        .background {
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color.Neumorphic.main).softOuterShadow()
+        ZStack {
+            Color.Neumorphic.main
+                .ignoresSafeArea()
+            VStack {
+                Text(prayerRequest.requestName)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding()
+                Text(prayerRequest.requestBody)
+                    .font(.body)
+                    .padding(.horizontal)
+                    .padding(.bottom)
+            }
+            .padding()
+            .background {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.Neumorphic.main).softInnerShadow(RoundedRectangle(cornerRadius: 20), spread: 0.15, radius: 2)
+            }
         }
     }
 }
