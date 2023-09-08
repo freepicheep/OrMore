@@ -63,6 +63,8 @@ struct PrayerRequestEditor: View {
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         Text(editorTitle)
+                            .font(.title)
+                            .fontWeight(.bold)
                     }
                 }
             }
